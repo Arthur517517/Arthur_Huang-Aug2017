@@ -4,10 +4,10 @@
  * @Arthur Huang (your name) 
  * @version (a version number or a date)
  */
-public class Hello_world
+public class Hello_World
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello World! From <Arthur>"); //Display the string
+        System.out.println("Hello World! From Arthur."); //Display the string
     }
 }
