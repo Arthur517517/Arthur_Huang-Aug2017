@@ -1,8 +1,8 @@
 /**
  * This program displays a message that says "Hello World!".
  * 
- * @Arthur Huang (your name) 
- * @version (a version number or a date)
+ * @Arthur Huang 
+ * @8/18/2017 
  */
 public class Hello_World
 {
