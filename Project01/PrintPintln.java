@@ -1,7 +1,7 @@
 
 /**
+ * Project 2 -- Use print and println
  * This program tests the functions of print and println.
- *
  * @Arthur Huang
  * @8/23/17
  */
