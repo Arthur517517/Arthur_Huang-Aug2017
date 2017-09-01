@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=GPA
+comment0.text=\r\n\ This\ program\ calculates\ the\ GPA.\r\n\r\n\ Arthur\ Huang\r\n\ 9/1/2017\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=grade1\ grade2\ grade3
+comment2.target=void\ calculateGPA(double,\ double,\ double)
+numComments=3
