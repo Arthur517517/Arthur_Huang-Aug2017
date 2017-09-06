@@ -8,13 +8,16 @@
 public class GPA
 {
     public static void main(String[] args){
-        calculateGPA(2.0, 4.0, 5.0);
+        double gpa = calculateGPA(2.0, 4.0, 5.0);
+        printGPA(gpa);
     }
     
-    public static void calculateGPA(double grade1, double grade2, double grade3){
+    public static double calculateGPA(double grade1, double grade2, double grade3){
         double GPA = (grade1 + grade2 + grade3) / 3;
-        System.out.println("Your grades are: " + grade1 + ", " + grade2 + ", " + grade3);
-        System.out.format("Your GPA is: %.2f" , GPA);
+        return GPA;
+    }
+    public static void printGPA(double gpa){
+        System.out.format("GPA: %.2f" , gpa);
     }
 }
 
