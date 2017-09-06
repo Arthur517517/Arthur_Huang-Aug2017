@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Calculate
+comment0.text=\r\n\ This\ class\ contains\ various\ methods\ that\ perform\ mathematic\ calculations\r\n\ Arthur\ Huang\r\n\ 9/6/2017\r\n
+comment1.params=number
+comment1.target=int\ square(int)
+comment2.params=number
+comment2.target=int\ cube(int)
+comment3.params=num1\ num2
+comment3.target=double\ average(double,\ double)
+comment4.params=num1\ num2\ num3
+comment4.target=double\ average(double,\ double,\ double)
+comment5.params=radian
+comment5.target=double\ toDegrees(double)
+comment6.params=degree
+comment6.target=double\ toRadians(double)
+comment7.params=a\ b\ c
+comment7.target=double\ discriminant(double,\ double,\ double)
+comment8.params=numerator\ denominator
+comment8.target=java.lang.String\ toMixedNum(int,\ int)
+comment9.params=a\ b\ c\ d\ x
+comment9.target=java.lang.String\ foil(int,\ int,\ int,\ int,\ java.lang.String)
+numComments=10
