@@ -1,4 +1,3 @@
-
 /**
  * This class contains various methods that perform mathematic calculations
  * Arthur Huang
@@ -29,6 +28,11 @@ public class Calculate
     public static double discriminant(double a, double b, double c){
         return (b * b) - 4 * a * c;
     }
+    public static String toImproperFrac(int wholeNum, int numerator, int denominator){
+        int impNume = wholeNum * denominator + numerator;
+        String improperFrac = new String(impNume + "/" + denominator);
+        return improperFrac;
+    }
     public static String toMixedNum(int numerator, int denominator){
         int wholeNum = numerator / denominator;
         int mixedNume = numerator - wholeNum * denominator;
@@ -39,4 +43,5 @@ public class Calculate
         String foiled = new String(a*c + x + "^2 " + "+ " + (a*d + b*c) + x +" + " + b*d);
         return foiled;
     }
+    
 }
