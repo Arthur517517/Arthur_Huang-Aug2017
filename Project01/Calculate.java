@@ -43,5 +43,33 @@ public class Calculate
         String foiled = new String(a*c + x + "^2 " + "+ " + (a*d + b*c) + x +" + " + b*d);
         return foiled;
     }
-    
+    public static boolean isDivisibleBy(int divident, int divisor){
+        return divident % divisor == 0;
+    }
+    public static double absValue(double number){
+        if(number < 0){
+            number *= -1;
+        }
+        return number;
+    }
+    public static double max(double number1, double number2){
+        double largestNum;
+        if(number1 > number2){
+            largestNum = number1;
+        }
+        else{
+            largestNum = number2;
+        }
+        return largestNum;
+    }
+    public static double max(double number1, double number2, double number3){
+        double largestNum = number1;
+        if(number2 > number1){
+            largestNum = number2;
+        }
+        if(number3 > number2){
+            largestNum = number3;
+        }
+        return largestNum;
+    }
 }
