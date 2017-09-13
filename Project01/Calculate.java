@@ -116,4 +116,52 @@ public class Calculate
             }
         }
     }
+    public static double exponent(double base, int exponent){
+        double product = 1;
+        for(int i = 0; i < exponent; i++){
+            product *= base;
+        }
+        return product;
+    }
+    public static int factorial(int number){
+        int product = 1;
+        for(int i = 1; i <= number; i++){
+            product *= i;
+        }
+        return product;
+    }
+    public static boolean isPrime(int number){
+        int counter = 0;
+        if(number > 0){
+            for(int i = 1; i <= number; i++){
+                if(isDivisibleBy(number, i)){
+                    counter++;
+                }
+            }
+            if(counter == 2){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else if(number < 0){
+            number *= -1;
+            for(int i = 1; i <= number; i++){
+                if(isDivisibleBy(number, i)){
+                    counter++;
+                }
+            }
+            if(counter == 2){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+        
+    }
 }
