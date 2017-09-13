@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 /**
  * This class contains various methods that perform mathematic calculations
  * Arthur Huang
