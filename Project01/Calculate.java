@@ -96,10 +96,25 @@ public class Calculate
         return minNum;
     }
     //rounds a double value to 2 decimal places
-    public static double round(double number){
-        String numToRound = new String(String.valueOf(number));//converts the double value into a string
-        DecimalFormat round = new DecimalFormat("#.##");
-        String numRounded = new String(round.format(number));
-        return Double.parseDouble(numRounded);//converts string value back to double
+    public static double round2(double number){
+        if(number < 0){//rounds a number that is negative
+            number *= -1;//converts the number to a positive number
+            if(number * 1000 % 10 < 5){
+                number = (number * 1000 - number * 1000 % 10) / 1000;
+            }
+            else{
+                number = (10 - number * 1000 % 10 + number * 1000) / 1000;
+            }
+            number *= -1;//converts the number back to a negative number
+            return number;
+        }
+        else{//rounds a number that is positive
+            if(number * 1000 % 10 < 5){
+                return (number * 1000 - number * 1000 % 10) / 1000;
+            }
+            else{
+                return (10 - number * 1000 % 10 + number * 1000) / 1000;
+            }
+        }
     }
 }
