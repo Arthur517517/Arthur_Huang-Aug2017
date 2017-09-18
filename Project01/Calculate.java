@@ -116,13 +116,15 @@ public class Calculate
             }
         }
     }
+    //returns a value given a base raised to a certain exponents
     public static double exponent(double base, int exponent){
-        double product = 1;
+        double product = 1;//initializes variable product to 1 do use it in calculations
         for(int i = 0; i < exponent; i++){
-            product *= base;
+            product *= base;//multiply product by base for (exponent) number of times
         }
         return product;
     }
+    //returns the factorial of a number, meaning multiplying all numbers before it in order
     public static int factorial(int number){
         int product = 1;
         for(int i = 1; i <= number; i++){
@@ -130,70 +132,58 @@ public class Calculate
         }
         return product;
     }
+    //returns whether the number is prime or not
     public static boolean isPrime(int number){
         int counter = 0;
-        if(number > 0){
+        if(number > 0){//checks if the number is positive
             for(int i = 1; i <= number; i++){
                 if(isDivisibleBy(number, i)){
-                    counter++;
+                    counter++;//sets up a counter to keep track of the times the number is divisble by a number
                 }
             }
-            if(counter == 2){
+            if(counter == 2){//if the number is only divisible by 1 and itself
                 return true;
             }
             else{
                 return false;
             }
         }
-        else if(number < 0){
-            number *= -1;
-            for(int i = 1; i <= number; i++){
-                if(isDivisibleBy(number, i)){
-                    counter++;
-                }
-            }
-            if(counter == 2){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        else{
+        else{//if the number is 0 or negative
             return false;
         }
     }
+    //returns the greatest common factor of two numbers
     public static int gcf(int number1, int number2){
         int num1 = number1;
         int num2 = number2;
         while(number2 != 0){
             if(isDivisibleBy(num1, num2)){
-                number1 = number2;
+                number1 = number2;//returns number 2 if number1 is divisible by number2
             }
             else{
                 int number3 = number1;
-                number1 = number2;
+                number1 = number2;//swaps the values of number1 and number2
                 number2 = number3 % number2;
             }
         }
         return (int) absValue(number1);
     }
+    //returns the sqaure root of a number, rounded to two decimal places
     public static double sqrt(double number){
         double estimate; 
-		double squareRoot;
-		if(number == 0){
-			squareRoot = 0;
-		}
-		else if(number > 0){
-			squareRoot = number / 2;
-			do{
-				estimate = squareRoot;
-				squareRoot = (estimate + (number / estimate)) / 2;
-			}while ((estimate - squareRoot) != 0);
-		
-		}else{
-			squareRoot = number;
-		}
-		return round2(squareRoot);
+        double squareRoot;
+        if(number == 0){
+            squareRoot = 0;
+        }
+        else if(number > 0){
+            squareRoot = number / 2;
+            do{
+                estimate = squareRoot;
+                squareRoot = (estimate + (number / estimate)) / 2;
+            }while ((estimate - squareRoot) != 0);
+        }else{
+            squareRoot = number;
+        }
+        return round2(squareRoot);
     }
 }
