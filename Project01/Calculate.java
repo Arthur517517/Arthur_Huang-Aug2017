@@ -162,6 +162,38 @@ public class Calculate
         else{
             return false;
         }
-        
+    }
+    public static int gcf(int number1, int number2){
+        int num1 = number1;
+        int num2 = number2;
+        while(number2 != 0){
+            if(isDivisibleBy(num1, num2)){
+                number1 = number2;
+            }
+            else{
+                int number3 = number1;
+                number1 = number2;
+                number2 = number3 % number2;
+            }
+        }
+        return (int) absValue(number1);
+    }
+    public static double sqrt(double number){
+        double estimate; 
+		double squareRoot;
+		if(number == 0){
+			squareRoot = 0;
+		}
+		else if(number > 0){
+			squareRoot = number / 2;
+			do{
+				estimate = squareRoot;
+				squareRoot = (estimate + (number / estimate)) / 2;
+			}while ((estimate - squareRoot) != 0);
+		
+		}else{
+			squareRoot = number;
+		}
+		return round2(squareRoot);
     }
 }
