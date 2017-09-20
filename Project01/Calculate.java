@@ -127,15 +127,26 @@ public class Calculate
     //returns the factorial of a number, meaning multiplying all numbers before it in order
     public static int factorial(int number){
         int product = 1;
-        for(int i = 1; i <= number; i++){
-            product *= i;
+        if(number == 0){
+            return 1;
         }
-        return product;
+        else if(number < 0){
+            throw new IllegalArgumentException("Your input is a negative number");
+        }
+        else{
+            for(int i = 1; i <= number; i++){
+                product *= i;
+            }
+            return product;
+        }
     }
     //returns whether the number is prime or not
     public static boolean isPrime(int number){
         int counter = 0;
-        if(number > 0){//checks if the number is positive
+        if(number <= 0){
+            throw new IllegalArgumentException("Your input is 0 or a negative number");
+        }
+        else if(number > 0){//checks if the number is positive
             for(int i = 1; i <= number; i++){
                 if(isDivisibleBy(number, i)){
                     counter++;//sets up a counter to keep track of the times the number is divisble by a number
@@ -172,7 +183,10 @@ public class Calculate
     public static double sqrt(double number){
         double estimate; 
         double squareRoot;
-        if(number == 0){
+        if(number < 0){
+            throw new IllegalArgumentException("Your input is a negative numebr");
+        }
+        else if(number == 0){
             squareRoot = 0;
         }
         else if(number > 0){
