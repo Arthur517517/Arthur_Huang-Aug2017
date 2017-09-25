@@ -200,4 +200,20 @@ public class Calculate
         }
         return round2(squareRoot);
     }
+    public static String quadForm(int a, int b, int c){
+        if(discriminant(a, b, c) < 0){
+            return "No real roots.";
+        }
+        else if(discriminant(a, b, c) == 0){
+            double root = round2(-b / (double)(2 * a));
+            String answer = root + "";
+            return answer;
+        }
+        else{
+            double positiveRoot = round2((-b + (sqrt(b*b - 4*a*c))) / (2*a));
+            double negativeRoot = round2((-b - (sqrt(b*b - 4*a*c))) / (2*a));
+            String answer = negativeRoot + " and " + positiveRoot;
+            return answer;
+        }
+    }
 }
