@@ -210,9 +210,9 @@ public class Calculate
             return answer;
         }
         else{
-            double positiveRoot = round2((-b + (sqrt(b*b - 4*a*c))) / (2*a));
-            double negativeRoot = round2((-b - (sqrt(b*b - 4*a*c))) / (2*a));
-            String answer = negativeRoot + " and " + positiveRoot;
+            double smallRoot = round2((-b + (sqrt(discriminant(a,b,c)))) / (2*a));
+            double bigRoot = round2((-b - (sqrt(discriminant(a,b,c)))) / (2*a));
+            String answer = smallRoot + " and " + bigRoot;
             return answer;
         }
     }
