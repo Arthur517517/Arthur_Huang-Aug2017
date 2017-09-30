@@ -183,7 +183,7 @@ public class Calculate
     public static double sqrt(double number){
         double estimate; 
         double squareRoot;
-        if(number < 0){
+        if(number < 0){//throws an exception if the input is a negative number
             throw new IllegalArgumentException("Your input is a negative numebr");
         }
         else if(number == 0){
@@ -200,8 +200,9 @@ public class Calculate
         }
         return round2(squareRoot);
     }
+    //this method takes in 3 integer arguments and calls other methods in this class to calculate the roots of a quadratic function
     public static String quadForm(int a, int b, int c){
-        if(discriminant(a, b, c) < 0){
+        if(discriminant(a, b, c) < 0){//if the output after calling the discriminant is a negative number
             return "No real roots.";
         }
         else if(discriminant(a, b, c) == 0){
@@ -210,7 +211,7 @@ public class Calculate
             return answer;
         }
         else{
-            double smallRoot = round2((-b + (sqrt(discriminant(a,b,c)))) / (2*a));
+            double smallRoot = round2((-b + (sqrt(discriminant(a,b,c)))) / (2*a));//rounds answer to two decimal places
             double bigRoot = round2((-b - (sqrt(discriminant(a,b,c)))) / (2*a));
             String answer = smallRoot + " and " + bigRoot;
             return answer;
