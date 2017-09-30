@@ -211,8 +211,8 @@ public class Calculate
             return answer;
         }
         else{
-            double smallRoot = round2((-b + (sqrt(discriminant(a,b,c)))) / (2*a));//rounds answer to two decimal places
-            double bigRoot = round2((-b - (sqrt(discriminant(a,b,c)))) / (2*a));
+            double bigRoot = round2((-b + (sqrt(discriminant(a,b,c)))) / (2*a));//rounds answer to two decimal places
+            double smallRoot = round2((-b - (sqrt(discriminant(a,b,c)))) / (2*a));
             String answer = smallRoot + " and " + bigRoot;
             return answer;
         }
