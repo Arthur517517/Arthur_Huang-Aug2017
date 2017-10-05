@@ -1,6 +1,4 @@
 #BlueJ class context
-comment0.target=ProcessingNumbers
-comment0.text=\r\n\ This\ class\ contains\ a\ program\ that\ allows\ users\ to\ input\ numbers,\ find\r\n\ the\ largest\ and\ smallest\ numbers,\ find\ the\ largest\ even\ number,\ and\ find\r\n\ the\ sum\ of\ all\ even\ numbers.\r\n\ Arthur\ Huang\r\n\ 10/4/2017\r\n
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+numComments=1
