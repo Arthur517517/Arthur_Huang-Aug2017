@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Quadratic
+comment0.text=\r\n\ This\ class\ is\ responsible\ for\ the\ calculations\ QuadraticClient\ need\ to\r\n\ print\ out\ information\ about\ a\ parabola\r\n\ Arthur\ Huang\r\n\ 10/10/2017\r\n
+comment1.params=a\ b\ c
+comment1.target=java.lang.String\ quadrDescriber(double,\ double,\ double)
+numComments=2
