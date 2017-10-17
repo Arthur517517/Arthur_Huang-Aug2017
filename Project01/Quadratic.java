@@ -22,7 +22,7 @@ public class Quadratic
         parabolaInfo += "Axis of Symmetry: " + vertX + "\n";
         parabolaInfo += "Vertex: (" + vertX + ", " + vertY + ")\n";
         parabolaInfo += "x-intercept(s): " + xIntercepts + "\n";
-        parabolaInfo += "y-intercept: " + c + "\n\n";
+        parabolaInfo += "y-intercept: " + c + "\n";
         return parabolaInfo;
     }
     public static double sqrt(double number){
@@ -47,7 +47,7 @@ public class Quadratic
     }
     public static String quadForm(double a, double b, double c){
         if(discriminant(a, b, c) < 0){//if the output after calling the discriminant is a negative number
-            return "No real roots.";
+            return "None";
         }
         else if(discriminant(a, b, c) == 0){
             double root = round2(-b / (2 * a));

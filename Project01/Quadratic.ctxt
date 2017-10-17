@@ -1,12 +1,14 @@
 #BlueJ class context
-comment0.params=a\ b\ c
-comment0.target=java.lang.String\ quadrDescriber(double,\ double,\ double)
-comment1.params=number
-comment1.target=double\ sqrt(double)
-comment2.params=a\ b\ c
-comment2.target=java.lang.String\ quadForm(double,\ double,\ double)
-comment3.params=number
-comment3.target=double\ round2(double)
-comment4.params=a\ b\ c
-comment4.target=double\ discriminant(double,\ double,\ double)
-numComments=5
+comment0.target=Quadratic
+comment0.text=\r\n\ This\ class\ is\ responsible\ for\ the\ calculations\ QuadraticClient\ need\ to\r\n\ print\ out\ information\ about\ a\ parabola\r\n\ Arthur\ Huang\r\n\ 10/10/2017\r\n
+comment1.params=a\ b\ c
+comment1.target=java.lang.String\ quadrDescriber(double,\ double,\ double)
+comment2.params=number
+comment2.target=double\ sqrt(double)
+comment3.params=a\ b\ c
+comment3.target=java.lang.String\ quadForm(double,\ double,\ double)
+comment4.params=number
+comment4.target=double\ round2(double)
+comment5.params=a\ b\ c
+comment5.target=double\ discriminant(double,\ double,\ double)
+numComments=6
