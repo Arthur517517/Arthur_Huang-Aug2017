@@ -9,17 +9,17 @@ public class Quadratic
 {
     public static String quadrDescriber(double a, double b, double c){
         String parabolaInfo = "Description of the graph of: \n" + "y = " + 
-            a + "x^2 + " + b + " + " + c + "\n\n";
+            a + "x^2 + " + b + " + " + c + "\n\n";//creates a string for the equation
         if(a < 0){
             parabolaInfo += "Opens: Down\n";
-        }else{
+        }else{//if a value is not less than 0
             parabolaInfo += "Opens: Up\n";
         }
         double vertX = -b / (2 * a);
-        double vertY = a * vertX * vertX + b * vertX + c;
+        double vertY = a * vertX * vertX + b * vertX + c;//calculates y coordinate of the vertex
         String xIntercepts = quadForm(a, b, c);
         
-        parabolaInfo += "Axis of Symmetry: " + vertX + "\n";
+        parabolaInfo += "Axis of Symmetry: " + vertX + "\n";//adds another string providing AOS to the euation string
         parabolaInfo += "Vertex: (" + vertX + ", " + vertY + ")\n";
         parabolaInfo += "x-intercept(s): " + xIntercepts + "\n";
         parabolaInfo += "y-intercept: " + c + "\n";
