@@ -65,25 +65,19 @@ public class SplitString {
         //String middle;// middle of the sandwich
         //middle = sandwich.substring(firstBreadPosi+5, secondBreadPosi);
         //System.out.println(middle);
-        
+        int firstBreadPos = swch.indexOf("bread");
+        int secondBreadPos = swch.indexOf("bread", firstBreadPos + 5);
         if(swich.length <= 0){
             System.out.println("Not a sandwich.");
         }else if(!sandwich.contains("bread")){
             System.out.println("Not a sandwich.");
-        
-        }else if(sandwich.contains("bread") && swich.length == 1 && !swich[0].equals("bread")){
+        }else if(sandwich.equals("bread")){
             System.out.println("Not a sandwich.");
-        }
-        else{
+        }else{
             if(swich.length == 1){
-                filling += swich[0];
-                System.out.println(filling);
-            }
-            if(swich.length >= 3){
-                for(int i = 1;i < swich.length - 1; i++){
-                    filling += swich[i];
-                }
-                System.out.println(filling);
+                System.out.println(swich[0]);
+            }else if(){
+                
             }
         }
            
