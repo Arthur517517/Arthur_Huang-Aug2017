@@ -26,6 +26,9 @@ public class SplitString {
         String [] ex2 = str2.split(" ");
         System.out.println(Arrays.toString(ex2));
         
+        String str3 = "bacon";
+        String [] ex3 = str3.split("bread");
+        System.out.println(Arrays.toString(ex3));
         //Your task Part 1:
         /*Write a method that take in a string like "applespineapplesbreadlettucetomatobaconmayohambreadcheese" describing a sandwich
         * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
@@ -33,7 +36,19 @@ public class SplitString {
         */
         middleOfSandwich("applespineapplesbreadlettucetomatobaconmayohambreadcheese");
         middleOfSandwich("applespineapplesbreadlettucetomatobreadbaconbreadmayohambreadcheese");
-        middleOfSandwich("breadsushibread");
+        middleOfSandwich("breadbread");
+        middleOfSandwich("breadcheesebread");
+        middleOfSandwich("bread");
+        middleOfSandwich("bacon");
+        middleOfSandwich("breadbacon");
+        middleOfSandwich("baconbread");
+        middleOfSandwich("breadbaconbread");
+        middleOfSandwich("baconbreadbread");
+        middleOfSandwich("breadbreadbacon");
+        middleOfSandwich("applebreadbacanbread");
+        middleOfSandwich("lemonbreadbaconbreadsushi");
+        middleOfSandwich("lemonbreadbreadbaconbreadsushi");
+        middleOfSandwich("lemonbreadbaconbreadsushi");
         //Your task Part 2:
         /*Write a method that take in a string like "apples pineapples bread lettuce tomato bacon mayo ham bread cheese" describing a sandwich
         * use String.split to split up the sandwich at the spaces, " ", and return what's in the middle of the sandwich and ignores what's on the outside
@@ -51,14 +66,29 @@ public class SplitString {
         //middle = sandwich.substring(firstBreadPosi+5, secondBreadPosi);
         //System.out.println(middle);
         
-        if(swich.length > 3){
-            for(int i = 1;i < swich.length - 1; i++){
-                filling += swich[i];
-            }
-            System.out.println(filling);
-        }else{
-            System.out.println(swich[1]);
+        if(swich.length <= 0){
+            System.out.println("Not a sandwich.");
+        }else if(!sandwich.contains("bread")){
+            System.out.println("Not a sandwich.");
+        
+        }else if(sandwich.contains("bread") && swich.length == 1 && !swich[0].equals("bread")){
+            System.out.println("Not a sandwich.");
         }
+        else{
+            if(swich.length == 1){
+                filling += swich[0];
+                System.out.println(filling);
+            }
+            if(swich.length >= 3){
+                for(int i = 1;i < swich.length - 1; i++){
+                    filling += swich[i];
+                }
+                System.out.println(filling);
+            }
+        }
+           
+        
+      
         
     }
     public static void middleOfSandwichSpaces(String sandwich){

@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.target=SplitString
-comment0.text=\r\n\ Write\ a\ description\ of\ SplitString\ here.\r\n\ \r\n\ Arthur\ Huang\r\n\ 10/27/2017\r\n
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=sandwich
+comment1.target=void\ middleOfSandwich(java.lang.String)
 comment2.params=sandwich
-comment2.target=void\ middleOfSandwich(java.lang.String)
-comment3.params=sandwich
-comment3.target=void\ middleOfSandwichSpaces(java.lang.String)
-numComments=4
+comment2.target=void\ middleOfSandwichSpaces(java.lang.String)
+numComments=3
