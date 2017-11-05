@@ -1,4 +1,20 @@
 #BlueJ class context
-comment0.target=ArraysLab3
-comment0.text=\r\n\ This\ class\ contains\ various\ methods\ that\ manipulate\ the\ values\ inside\ several\ arrays.\r\n\r\n\ Arthur\ Huang\r\n\ 11/2/2017\r\n
-numComments=1
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ Write\ a\ main\ method\ that\ will\ \r\n\ \ \ \ Contain\r\n\ \ \ \ integer\ arrays\ a1,\ a2,\ sumArr,\ appendArr,\ removeArr\r\n\ \ \ \ int\ variables\ appendNum,\ removeIdx,\ sumOfEvens\r\n\ \ \ \ Carry\ out\ the\ following\ actions\r\n\ \ \ \ Declare\ array\ a1\ containing\ the\ values\ (5,\ 10,\ 15,\ 20,\ 25,\ 30,\ 35,\ 40)\ \r\n\ \ \ \ and\ array\ a2\ containing\ the\ values\ (7,\ 14,\ 21,\ 28,\ 35,\ 42,\ 49,\ 56)\r\n\ \ \ \ Form\ sumArr\ by\ calling\ the\ sum\ method\ with\ a1\ and\ a2\ as\ inputs\r\n\ \ \ \ Declare\ int\ appendNum\ and\ set\ it\ to\ 200.\r\n\ \ \ \ Form\ appendArr\ by\ calling\ the\ append\ method\ with\ a1\ and\ appendNum\ as\ inputs\r\n\ \ \ \ Declare\ int\ removeIdx\ and\ set\ it\ to\ 5.\r\n\ \ \ \ Form\ removeArr\ by\ calling\ remove\ with\ a2\ and\ removeIdx\r\n\ \ \ \ Form\ sumOfEvens\ by\ calling\ sumEven\ with\ appendArr\ as\ the\ input\r\n\ \ \ \ Call\ rotateRight\ with\ a1\ as\ the\ input\r\n\ \ \ \ On\ their\ own\ lines\ print\ out\ (use\ Arrays.toString\ to\ transform\ arrays\ into\ a\ printable\ strings)\ \:\r\n\ \ \ \ sumArr\r\n\ \ \ \ appendArr\r\n\ \ \ \ removeArr\r\n\ \ \ \ sumOfEvens\ (an\ int\ you\ don\u2019t\ need\ Arrays.toString)\r\n\ \ \ \ a1\r\n
+comment1.params=arr1\ arr2
+comment1.target=int[]\ sum(int[],\ int[])
+comment1.text=\r\n\ Write\ a\ method\ named\ sum\ that\ accepts\ two\ arrays\ of\ integers\ arr1\ and\ arr2\ \r\n\ and\ returns\ an\ array\ of\ integers,\ \r\n\ in\ which\ every\ element\ is\ the\ sum\ of\ the\ elements\ at\ that\ index\ for\ the\ arrays\ arr1\ and\ arr2.\ \r\n\ You\ can\ assume\ arrays\ arr1\ and\ arr2\ have\ at\ least\ one\ element\ each\ and\ are\ the\ same\ length.\r\n
+comment2.params=arr\ num
+comment2.target=int[]\ append(int[],\ int)
+comment2.text=\r\n\ Write\ a\ method\ named\ append\ that\ accepts\ an\ array\ of\ integers\ arr\ of\ length\ n\ \r\n\ and\ an\ integer\ num,\ and\ returns\ an\ array\ of\ integers\ of\ length\ n+1\ \r\n\ that\ consists\ of\ the\ elements\ of\ arr\ with\ num\ appended\ to\ the\ end.\ \r\n\ You\ can\ assume\ array\ arr\ has\ at\ least\ one\ element.\r\n
+comment3.params=arr\ idx
+comment3.target=int[]\ remove(int[],\ int)
+comment3.text=\r\n\ Write\ a\ method\ named\ remove\ that\ accepts\ an\ array\ of\ integers\ arr\ and\ an\ integer\ idx\ \r\n\ and\ returns\ an\ array\ of\ integers\ consisting\ of\ all\ of\ the\ elements\ of\ arr\ \r\n\ except\ for\ the\ element\ at\ index\ idx\ (thus,\ the\ returned\ array\ has\ a\ length\ of\ arr.length\ \u2013\ 1).\ \r\n\ You\ can\ assume\ arr\ has\ at\ least\ two\ elements.\r\n
+comment4.params=arr
+comment4.target=int\ sumEven(int[])
+comment4.text=\r\n\ Write\ a\ method\ sumEven\ that\ accepts\ an\ array\ of\ integers\ arr\ \r\n\ and\ returns\ an\ integer\ containing\ the\ sum\ of\ the\ elements\ at\ the\ even\ indices\ of\ arr.\ \r\n\ (That\ means\ elements\ at\ indices\ 0,2,4,6,8.)\ You\ can\ assume\ arr\ has\ at\ least\ one\ element.\r\n
+comment5.params=arr
+comment5.target=void\ rotateRight(int[])
+comment5.text=\r\n\ Write\ a\ method\ rotateRight\ that\ accepts\ an\ array\ of\ integers\ arr\ \r\n\ and\ does\ not\ return\ a\ value.\ \r\n\ The\ rotateRight\ method\ moves\ each\ element\ of\ arr\ one\ index\ to\ the\ right\ \r\n\ (element\ 0\ goes\ to\ element\ 1,\ element\ 1\ goes\ to\ element\ 2,\ \u2026,\ element\ n-1\ goes\ to\ element\ 0).\ \r\n\ You\ can\ assume\ arr\ has\ at\ least\ one\ element.\r\n
+numComments=6
