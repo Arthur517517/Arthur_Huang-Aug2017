@@ -7,29 +7,29 @@ import java.util.Arrays;
  */
 public class ArraysLab3
 {
-   /*
-    * Write a main method that will 
-    Contain
-    integer arrays a1, a2, sumArr, appendArr, removeArr
-    int variables appendNum, removeIdx, sumOfEvens
-    Carry out the following actions
-    Declare array a1 containing the values (5, 10, 15, 20, 25, 30, 35, 40) 
-    and array a2 containing the values (7, 14, 21, 28, 35, 42, 49, 56)
-    Form sumArr by calling the sum method with a1 and a2 as inputs
-    Declare int appendNum and set it to 200.
-    Form appendArr by calling the append method with a1 and appendNum as inputs
-    Declare int removeIdx and set it to 5.
-    Form removeArr by calling remove with a2 and removeIdx
-    Form sumOfEvens by calling sumEven with appendArr as the input
-    Call rotateRight with a1 as the input
-    On their own lines print out (use Arrays.toString to transform arrays into a printable strings) :
-    sumArr
-    appendArr
-    removeArr
-    sumOfEvens (an int you don’t need Arrays.toString)
-    a1
-    */
    public static void main(String[] args){
+       /*
+        * Write a main method that will 
+        Contain
+        integer arrays a1, a2, sumArr, appendArr, removeArr
+        int variables appendNum, removeIdx, sumOfEvens
+        Carry out the following actions
+        Declare array a1 containing the values (5, 10, 15, 20, 25, 30, 35, 40) 
+        and array a2 containing the values (7, 14, 21, 28, 35, 42, 49, 56)
+        Form sumArr by calling the sum method with a1 and a2 as inputs
+        Declare int appendNum and set it to 200.
+        Form appendArr by calling the append method with a1 and appendNum as inputs
+        Declare int removeIdx and set it to 5.
+        Form removeArr by calling remove with a2 and removeIdx
+        Form sumOfEvens by calling sumEven with appendArr as the input
+        Call rotateRight with a1 as the input
+        On their own lines print out (use Arrays.toString to transform arrays into a printable strings) :
+        sumArr
+        appendArr
+        removeArr
+        sumOfEvens (an int you don’t need Arrays.toString)
+        a1
+        */
        int[] a1 = {5, 10, 15, 20, 25, 30, 35, 40};
        int[] a2 = {7, 14, 21, 28, 35, 42, 49, 56};
        int[] sumArr = sum(a1, a2);
