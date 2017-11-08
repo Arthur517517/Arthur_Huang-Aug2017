@@ -13,7 +13,7 @@ public class Magpie2 {
      */
     public String getResponse(String statement) {
         String response = "";
-        if(statement.indexOf("no") >= 0){
+        if(statement.indexOf("no") >= 0 && !statement.equals("Knox")){
             response = "Why so negative?";
         }else if((statement.trim().length()) <= 0){
             response = "Say something please.";
@@ -22,6 +22,12 @@ public class Magpie2 {
                 || statement.indexOf("sister") >= 0
                 || statement.indexOf("brother") >= 0) {
             response = "Tell me more about your family.";
+        }else if(statement.indexOf("weather") >= 0){
+            response = "It's sunny but a bit windy outside today, mate.";
+        }else if(statement.indexOf("Where") >= 0){
+            response = "I am sure if you use Google Maps, you will find your answer.";
+        }else if(statement.indexOf("When") >= 0){
+            response = "100 years later.";
         }else if(statement.indexOf("Dreyer") >= 0){
             response = "She must be a great teacher!";
         }else if(statement.indexOf("deHeer") >= 0){
