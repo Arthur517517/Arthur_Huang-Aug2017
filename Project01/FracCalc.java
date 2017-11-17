@@ -32,13 +32,14 @@ public class FracCalc {
         String firstOperand = splitArr[0];
         String operator = splitArr[1];
         String secondOperand = splitArr[splitArr.length - 1];
-        
-        return parseOperands(secondOperand);
+        String[] answerString = new String[3];
+        parseOperands(secondOperand, answerString);
+        return "whole:" + answerString[0] + " numerator:" + answerString[1] + " denominator:" + answerString[2];
     }
     
 
     // TODO: Fill in the space below with any helper methods that you think you will need
-    public static String parseOperands(String operand){
+    public static void parseOperands(String operand, String[] answer){
         String wholeNumber = "";
         String numerator = "";
         String denominator = "";
@@ -63,6 +64,8 @@ public class FracCalc {
                 denominator = "1";
             }
         }
-        return "whole:" + wholeNumber + " numerator:" + numerator + " denominator:" + denominator;
+        answer[0] = wholeNumber;
+        answer[1] = numerator;
+        answer[2] = denominator;
     }
 }
