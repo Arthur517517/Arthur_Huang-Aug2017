@@ -9,9 +9,10 @@ public class FracCalc {
         Scanner input = new Scanner(System.in);
         while(!done){
             System.out.println("Enter your expression: ");
-            userExpr = input.next();
-            System.out.println(produceAnswer(userExpr));
-            if(userExpr.equals("quit")){
+            userExpr = input.nextLine();
+            if(!(userExpr.equals("quit"))) {
+                System.out.println(produceAnswer(userExpr));
+            }else {
                 done = true;
             }
         }
@@ -31,10 +32,21 @@ public class FracCalc {
         String[] splitArr = input.split(" ");
         String firstOperand = splitArr[0];
         String operator = splitArr[1];
-        String secondOperand = splitArr[splitArr.length - 1];
-        String[] answerString = new String[3];
-        parseOperands(secondOperand, answerString);
-        return "whole:" + answerString[0] + " numerator:" + answerString[1] + " denominator:" + answerString[2];
+        String secondOperand = splitArr[2];
+        String[] answerStringOp1 = new String[3];
+        String[] answerStringOp2 = new String[3];
+        
+        parseOperands(firstOperand, answerStringOp1);
+        parseOperands(secondOperand, answerStringOp2);
+        
+        int whole1 = Integer.parseInt(answerStringOp1[0]);
+        int nume1 = Integer.parseInt(answerStringOp1[1]);
+        int denom1 = Integer.parseInt(answerStringOp1[2]);
+        
+        int whole2 = Integer.parseInt(answerStringOp2[0]);
+        int nume2 = Integer.parseInt(answerStringOp2[1]);
+        int denom2 = Integer.parseInt(answerStringOp2[2]);
+        return plusMinus(operator, whole1, nume1, denom1, whole2, nume2, denom2);
     }
     
 
@@ -68,4 +80,19 @@ public class FracCalc {
         answer[1] = numerator;
         answer[2] = denominator;
     }
+    public static String plusMinus(String operator, int whole1, int nume1, int denom1, int whole2, int nume2, int denom2){
+        int totalNume1;
+        int totalNume2;
+        int totalDenom;
+        totalNume1 = whole1 * denom1 + nume1;
+        totalNume2 = whole2 * denom2 + nume2;
+        totalDenom = denom1 * denom2;
+        if(operator.equals("+")){
+            return totalNume1 + totalNume2 + "/" + totalDenom;
+        }else{
+            return totalNume1 - totalNume2 + "/" + totalDenom;
+        }
+        
+    }
 }
+
