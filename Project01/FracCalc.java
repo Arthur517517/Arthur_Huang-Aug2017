@@ -1,6 +1,5 @@
 import java.util.Scanner;
 public class FracCalc {
-
     public static void main(String[] args) 
     {
         // TODO: Read the input from the user and call produceAnswer with an equation
@@ -46,7 +45,11 @@ public class FracCalc {
         int whole2 = Integer.parseInt(answerStringOp2[0]);
         int nume2 = Integer.parseInt(answerStringOp2[1]);
         int denom2 = Integer.parseInt(answerStringOp2[2]);
-        return plusMinus(operator, whole1, nume1, denom1, whole2, nume2, denom2);
+        if(operator.equals("+") || operator.equals("-")){
+        	return plusMinus(operator, whole1, nume1, denom1, whole2, nume2, denom2);
+        }else {
+        	return multiplyDivide(operator, whole1, nume1, denom1, whole2, nume2, denom2);
+        }
     }
     
 
@@ -81,18 +84,22 @@ public class FracCalc {
         answer[2] = denominator;
     }
     public static String plusMinus(String operator, int whole1, int nume1, int denom1, int whole2, int nume2, int denom2){
-        int totalNume1;
-        int totalNume2;
-        int totalDenom;
-        totalNume1 = whole1 * denom1 + nume1;
-        totalNume2 = whole2 * denom2 + nume2;
-        totalDenom = denom1 * denom2;
+        int totalNume1 = (whole1 * denom1 + nume1) * denom2;
+        int totalNume2 = (whole2 * denom2 + nume2) * denom1;
+        int totalDenom = denom1 * denom2;
         if(operator.equals("+")){
             return totalNume1 + totalNume2 + "/" + totalDenom;
         }else{
             return totalNume1 - totalNume2 + "/" + totalDenom;
         }
-        
+    }
+    public static String multiplyDivide(String operator, int whole1, int nume1, int denom1, int whole2, int nume2, int denom2){
+        int totalNume1 = whole1 * denom1 + nume1;
+        int totalNume2 = whole2 * denom2 + nume2;
+        if(operator.equals("*")){
+            return totalNume1 * totalNume2 + "/" + denom1 * denom2;
+        }else{
+            return totalNume1 * denom2 + "/" + denom1 * totalNume2;
+        }
     }
 }
-
