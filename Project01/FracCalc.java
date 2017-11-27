@@ -45,10 +45,14 @@ public class FracCalc {
         int whole2 = Integer.parseInt(answerStringOp2[0]);
         int nume2 = Integer.parseInt(answerStringOp2[1]);
         int denom2 = Integer.parseInt(answerStringOp2[2]);
+        
+        int[] notReduced;
         if(operator.equals("+") || operator.equals("-")){
-        	return plusMinus(operator, whole1, nume1, denom1, whole2, nume2, denom2);
+        	notReduced = plusMinus(operator, whole1, nume1, denom1, whole2, nume2, denom2);
+        	return notReduced[0] + "/" + notReduced[1];
         }else {
-        	return multiplyDivide(operator, whole1, nume1, denom1, whole2, nume2, denom2);
+        	notReduced = multiplyDivide(operator, whole1, nume1, denom1, whole2, nume2, denom2);
+            return notReduced[0] + "/" + notReduced[1];
         }
     }
     
@@ -83,23 +87,54 @@ public class FracCalc {
         answer[1] = numerator;
         answer[2] = denominator;
     }
-    public static String plusMinus(String operator, int whole1, int nume1, int denom1, int whole2, int nume2, int denom2){
-        int totalNume1 = (whole1 * denom1 + nume1) * denom2;
-        int totalNume2 = (whole2 * denom2 + nume2) * denom1;
+    public static int[] plusMinus(String operator, int whole1, int nume1, int denom1, int whole2, int nume2, int denom2){
+        int totalNume1;
+        int totalNume2;
         int totalDenom = denom1 * denom2;
+        int[] improper = new int[2];
+        totalNume1 = (whole1 * denom1 + nume1) * denom2;
+        totalNume2 = (whole2 * denom2 + nume2) * denom1;
+        improper[1] = totalDenom;
+        if(whole1 < 0){
+            whole1 *= -1;
+            totalNume1 = (whole1 * denom1 + nume1) * denom2;
+            totalNume1 *= -1;
+        }
+        if(whole2 < 0){
+            whole2 *= -1;
+            totalNume2 = (whole2 * denom2 + nume2) * denom1;
+            totalNume2 *= -1;
+        }
         if(operator.equals("+")){
-            return totalNume1 + totalNume2 + "/" + totalDenom;
+            improper[0] = totalNume1 + totalNume2;
         }else{
-            return totalNume1 - totalNume2 + "/" + totalDenom;
+            improper[0] = totalNume1 - totalNume2;
         }
+        return improper;
     }
-    public static String multiplyDivide(String operator, int whole1, int nume1, int denom1, int whole2, int nume2, int denom2){
-        int totalNume1 = whole1 * denom1 + nume1;
-        int totalNume2 = whole2 * denom2 + nume2;
-        if(operator.equals("*")){
-            return totalNume1 * totalNume2 + "/" + denom1 * denom2;
-        }else{
-            return totalNume1 * denom2 + "/" + denom1 * totalNume2;
+    public static int[] multiplyDivide(String operator, int whole1, int nume1, int denom1, int whole2, int nume2, int denom2){
+        int totalNume1;
+        int totalNume2;
+        int[] improper2 = new int[2];
+        totalNume1 = whole1 * denom1 + nume1;
+        totalNume2 = whole2 * denom2 + nume2;
+        if(whole1 < 0){
+            whole1 *= -1;
+            totalNume1 = whole1 * denom1 + nume1;
+            totalNume1 *= -1;
         }
+        if(whole2 < 0){
+            whole2 *= -1;
+            totalNume2 = whole2 * denom2 + nume2;
+            totalNume2 *= -1;
+        }
+        if(operator.equals("*")){
+            improper2[0] = totalNume1 * totalNume2;
+            improper2[1] = denom1 * denom2;
+        }else{
+            improper2[0] = totalNume1 * denom2;
+            improper2[1] = totalNume2 * denom1;
+        }
+        return improper2;
     }
 }
