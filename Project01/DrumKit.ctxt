@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DrumKit
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DrumKit\ here.\r\n\r\n\ Arthur\ Huang\r\n\ 11/29/2017\r\n
+comment1.params=
+comment1.target=DrumKit()
+comment2.params=
+comment2.target=void\ playSnare()
+comment3.params=
+comment3.target=void\ playTopHat()
+numComments=4

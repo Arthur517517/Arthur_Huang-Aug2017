@@ -1,12 +1,15 @@
 #BlueJ class context
-comment0.params=args
-comment0.target=void\ main(java.lang.String[])
-comment1.params=input
-comment1.target=java.lang.String\ produceAnswer(java.lang.String)
-comment2.params=operand\ answer
-comment2.target=void\ parseOperands(java.lang.String,\ java.lang.String[])
-comment3.params=operator\ whole1\ nume1\ denom1\ whole2\ nume2\ denom2
-comment3.target=int[]\ plusMinus(java.lang.String,\ int,\ int,\ int,\ int,\ int,\ int)
-comment4.params=operator\ whole1\ nume1\ denom1\ whole2\ nume2\ denom2
-comment4.target=int[]\ multiplyDivide(java.lang.String,\ int,\ int,\ int,\ int,\ int,\ int)
-numComments=5
+comment0.target=FracCalc
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=input
+comment2.target=java.lang.String\ produceAnswer(java.lang.String)
+comment3.params=operand\ answer
+comment3.target=void\ parseOperands(java.lang.String,\ java.lang.String[])
+comment4.params=operator\ totalNume1\ totalNume2\ denom1\ denom2
+comment4.target=int[]\ plusMinus(java.lang.String,\ int,\ int,\ int,\ int)
+comment5.params=operator\ totalNume1\ totalNume2\ denom1\ denom2
+comment5.target=int[]\ multiplyDivide(java.lang.String,\ int,\ int,\ int,\ int)
+comment6.params=wholeNum\ numerator\ denominator
+comment6.target=int\ toImproper(int,\ int,\ int)
+numComments=7
