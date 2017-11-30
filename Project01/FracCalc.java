@@ -9,9 +9,9 @@ public class FracCalc {
         while(!done){
             System.out.println("Enter your expression: ");
             userExpr = input.nextLine();
-            if(!(userExpr.equals("quit"))) {
+            if(!(userExpr.equals("quit"))){
                 System.out.println(produceAnswer(userExpr));
-            }else {
+            }else{
                 done = true;
             }
         }
@@ -49,13 +49,16 @@ public class FracCalc {
         int[] notReduced;
         int totalNume1 = toImproper(whole1, nume1, denom1);
         int totalNume2 = toImproper(whole2, nume2, denom2);
+        String reduced;
         if(operator.equals("+") || operator.equals("-")){
             notReduced = plusMinus(operator, totalNume1, totalNume2, denom1, denom2);
-            return notReduced[0] + "/" + notReduced[1];
-        }else {
+            //return notReduced[0] + "/" + notReduced[1];
+        }else{
             notReduced = multiplyDivide(operator, totalNume1, totalNume2, denom1, denom2);
-            return notReduced[0] + "/" + notReduced[1];
+            //return notReduced[0] + "/" + notReduced[1];
         }
+        reduced = reduce(notReduced);
+        return reduced;
     }
     
 
@@ -90,9 +93,8 @@ public class FracCalc {
         answer[2] = denominator;
     }
     public static int[] plusMinus(String operator, int totalNume1, int totalNume2, int denom1, int denom2){
-        int totalDenom = denom1 * denom2;
         int[] improp = new int[2];
-        improp[1] = totalDenom;
+        improp[1] = denom1 * denom2;
         if(operator.equals("+")){
             improp[0] = (totalNume1 * denom2) + (totalNume2 * denom1);
         }else{
@@ -119,5 +121,51 @@ public class FracCalc {
             totalNume = wholeNum * denominator + numerator;
         }
         return totalNume;
+    }
+    public static String reduce(int[] improper){
+        int reducedNume;
+        int reducedDenom;
+        int whole;
+        int gCF;
+        if(improper[0] == 0){
+            return "0";
+        }else if(improper[0] == improper[1]){
+            return "1";
+        }else if(isDivisibleBy(improper[0], improper[1])){
+            whole = improper[0] / improper[1];
+            return "" + whole;
+        }else if((improper[0] > improper[1]) && !(isDivisibleBy(improper[0], improper[1]))){
+            whole = improper[0] / improper[1];
+            
+        }else{
+            gCF = gcf(improper[0], improper[1]);
+            reducedNume = improper[0] / gCF;
+            reducedDenom = improper[1] / gCF;
+            return reducedNume + "/" + reducedDenom;
+        }
+    }
+    public static int gcf(int number1, int number2){
+        int num1 = number1;
+        int num2 = number2;
+        while(number2 != 0){
+            if(isDivisibleBy(num1, num2)){
+                number1 = number2;//returns number 2 if number1 is divisible by number2
+            }
+            else{
+                int number3 = number1;
+                number1 = number2;//swaps the values of number1 and number2
+                number2 = number3 % number2;
+            }
+        }
+        return (int) absValue(number1);
+    }
+    public static double absValue(double number){
+        if(number < 0){
+            number *= -1;//converts a negative number to a positive number
+        }
+        return number;
+    }
+    public static boolean isDivisibleBy(int divident, int divisor){
+        return divident % divisor == 0;
     }
 }
