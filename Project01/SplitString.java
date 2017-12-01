@@ -57,49 +57,44 @@ public class SplitString {
        //middleOfSandwichSpaces("apples pineapples bread lettuce tomato bacon mayo ham bread cheese");
     }
     public static void middleOfSandwich(String sandwich){
-        String filling = "";
-        String[] swich = sandwich.split("bread");
         int firstBreadPos = sandwich.indexOf("bread");
-        int secondBreadPos = sandwich.indexOf("bread", firstBreadPos + 5);
+        int secondBreadPos = sandwich.indexOf("bread", firstBreadPos+5);
+        
+        String[] sand = sandwich.split("bread");
+        //check if "bread" occurs twice
         if(firstBreadPos < 0){
             System.out.println("Not a sandwich");
-        }else if(firstBreadPos >= 0 && secondBreadPos < 0){
+        }else if(firstBreadPos >=0&& secondBreadPos < 0){
             System.out.println("Not a sandwich");
         }else{
-            if(firstBreadPos + 5 == secondBreadPos){
+            String middle = "";// middle of the sandwich
+            if(firstBreadPos+5 == secondBreadPos){
                 System.out.println("Not a sandwich");
             }else{
-                filling = sandwich.substring(firstBreadPos+5, secondBreadPos);
-                System.out.println(filling);
+                middle = sandwich.substring(firstBreadPos+5, secondBreadPos);
+                System.out.println(middle);
             }
         }
         
-        //if(swich.length <= 0){
-            //System.out.println("Not a sandwich.");
-        //}else if(!sandwich.contains("bread")){
-            //System.out.println("Not a sandwich.");
-        //}else if(sandwich.equals("bread")){
-            //System.out.println("Not a sandwich.");
-        //}else{
-            //if(swich.length == 1){
-                //System.out.println(swich[0]);
-            //}else if(){
-                
-            //}
-        //}
     }
     public static void middleOfSandwichSpaces(String sandwich){
-        //int firstBreadPosi = sandwich.indexOf("bread");
-        //int secondBreadPosi = sandwich.indexOf("bread" , firstBreadPosi +5);
+        int firstBreadPosi = sandwich.indexOf("bread");
+        int secondBreadPosi = sandwich.indexOf("bread" , firstBreadPosi +5);
             
-        //if (secondBreadPosi > 0){
-            //String middle = sandwich.substring(firstBreadPosi+6, secondBreadPosi);
-            //if (middle.length() > 1){
-                //String[] realSandwich1 = middle.split(" ");
-                //System.out.println(Arrays.toString(realSandwich1));
-            //}
-        //}
+        if (secondBreadPosi > 0){
+            String middle = sandwich.substring(firstBreadPosi+6, secondBreadPosi);
+            if (middle.length() > 1){
+        	String[] realSandwich1 = middle.split(" ");
+        	String newSandwich1 = Arrays.toString(realSandwich1);
+        	sandwich = newSandwich1;
+            }else if (middle.length() < 1){
+        	sandwich = "Not a sandwich";
         
+            }else{ 
+        	sandwich = "Not a sandwich";
+            }
+            System.out.println(sandwich);
+        }
     }
 }
 
