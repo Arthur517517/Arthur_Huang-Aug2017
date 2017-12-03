@@ -19,5 +19,5 @@ comment7.target=java.lang.String\ reduce(int[])
 comment8.params=number1\ number2
 comment8.target=int\ gcf(int,\ int)
 comment9.params=number
-comment9.target=double\ absValue(double)
+comment9.target=int\ absValue(int)
 numComments=11

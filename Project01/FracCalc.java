@@ -134,9 +134,20 @@ public class FracCalc {
         }else if(isDivisibleBy(improper[0], improper[1])){
             whole = improper[0] / improper[1];
             return "" + whole;
-        }else if((improper[0] > improper[1]) && !(isDivisibleBy(improper[0], improper[1]))){
+        }else if((absValue(improper[0]) > improper[1]) && !(isDivisibleBy(improper[0], improper[1]))){
             whole = improper[0] / improper[1];
-            
+            reducedNume = absValue(improper[0]) % improper[1];
+            gCF = gcf(reducedNume, improper[1]);
+            reducedNume /= gCF;
+            improper[1] /= gCF;
+            if(whole == 0){
+                if(improper[1] < 0) {
+                    reducedNume *= -1;
+                    improper[1] *= -1;
+                }
+            	return reducedNume + "/" + improper[1];
+            }else
+                return whole + "_" + reducedNume + "/" + absValue(improper[1]);
         }else{
             gCF = gcf(improper[0], improper[1]);
             reducedNume = improper[0] / gCF;
@@ -159,7 +170,7 @@ public class FracCalc {
         }
         return (int) absValue(number1);
     }
-    public static double absValue(double number){
+    public static int absValue(int number){
         if(number < 0){
             number *= -1;//converts a negative number to a positive number
         }
