@@ -1,12 +1,16 @@
 import java.util.Scanner;
+//Arthur Huang
+//11/17/2017
+//This class contains a main program that asks user for expressions and calculates answer.
+//This calss contains other methods that will help the calculation/simplify process.
 public class FracCalc {
     public static void main(String[] args) 
-    {
+    {//ask the user for expressions to calculate
         // TODO: Read the input from the user and call produceAnswer with an equation
         boolean done = false;
         String userExpr;
         Scanner input = new Scanner(System.in);
-        while(!done){
+        while(!done){//loops until the user types quit
             System.out.println("Enter your expression: ");
             userExpr = input.nextLine();
             if(!(userExpr.equals("quit"))){
@@ -25,12 +29,12 @@ public class FracCalc {
     //        
     // The function should return the result of the fraction after it has been calculated
     //      e.g. return ==> "1_1/4"
-    public static String produceAnswer(String input)
+    public static String produceAnswer(String input)//returns the final answer of calculation, simplified
     { 
         // TODO: Implement this function to produce the solution to the input
-        String[] splitArr = input.split(" ");
-        String firstOperand = splitArr[0];
-        String operator = splitArr[1];
+        String[] splitArr = input.split(" ");//split the input at space
+        String firstOperand = splitArr[0];//firstOperand is the first element
+        String operator = splitArr[1];//second element is the operator
         String secondOperand = splitArr[2];
         String[] answerStringOp1 = new String[3];
         String[] answerStringOp2 = new String[3];
@@ -38,7 +42,7 @@ public class FracCalc {
         parseOperands(firstOperand, answerStringOp1);
         parseOperands(secondOperand, answerStringOp2);
         
-        int whole1 = Integer.parseInt(answerStringOp1[0]);
+        int whole1 = Integer.parseInt(answerStringOp1[0]);//convert strings in the array to integers
         int nume1 = Integer.parseInt(answerStringOp1[1]);
         int denom1 = Integer.parseInt(answerStringOp1[2]);
         
@@ -47,36 +51,34 @@ public class FracCalc {
         int denom2 = Integer.parseInt(answerStringOp2[2]);
         
         int[] notReduced;
-        int totalNume1 = toImproper(whole1, nume1, denom1);
+        int totalNume1 = toImproper(whole1, nume1, denom1);//changes the answer to improper fractions, meaning the answer is not reduced yet
         int totalNume2 = toImproper(whole2, nume2, denom2);
         String reduced;
         if(operator.equals("+") || operator.equals("-")){
             notReduced = plusMinus(operator, totalNume1, totalNume2, denom1, denom2);
-            //return notReduced[0] + "/" + notReduced[1];
         }else{
             notReduced = multiplyDivide(operator, totalNume1, totalNume2, denom1, denom2);
-            //return notReduced[0] + "/" + notReduced[1];
         }
-        reduced = reduce(notReduced);
+        reduced = reduce(notReduced);//reduce the improper answer
         return reduced;
     }
     
 
     // TODO: Fill in the space below with any helper methods that you think you will need
-    public static void parseOperands(String operand, String[] answer){
+    public static void parseOperands(String operand, String[] answer){//process the input to determine the first operand, operator, and second operand
         String wholeNumber = "";
         String numerator = "";
         String denominator = "";
         String[] slashUnderscore;
-        String[] splitUnderscore = operand.split("_");
-        if(splitUnderscore.length == 2){
-            wholeNumber = splitUnderscore[0];
-            slashUnderscore = splitUnderscore[1].split("/");
+        String[] splitUnderscore = operand.split("_");//split the input at underscore
+        if(splitUnderscore.length == 2){//if the input is a mixed number
+            wholeNumber = splitUnderscore[0];//set the first element to wholeNumber
+            slashUnderscore = splitUnderscore[1].split("/");//split at slash to find numerator/denominator
             if(slashUnderscore.length == 2){
                 numerator = slashUnderscore[0];
                 denominator = slashUnderscore[1];
             }
-        }else{
+        }else{//if there is no wholeNumber
             slashUnderscore = operand.split("/");
             if(slashUnderscore.length == 2){
                 wholeNumber = "0";
@@ -94,55 +96,55 @@ public class FracCalc {
     }
     public static int[] plusMinus(String operator, int totalNume1, int totalNume2, int denom1, int denom2){
         int[] improp = new int[2];
-        improp[1] = denom1 * denom2;
+        improp[1] = denom1 * denom2;//multiply denominators to find common denominator
         if(operator.equals("+")){
-            improp[0] = (totalNume1 * denom2) + (totalNume2 * denom1);
+            improp[0] = (totalNume1 * denom2) + (totalNume2 * denom1);//use denom1 and denom2 to multiply whats needed to get the common denominator
         }else{
             improp[0] = totalNume1 * denom2 - totalNume2 * denom1;
         }
         return improp;
     }
-    public static int[] multiplyDivide(String operator, int totalNume1, int totalNume2, int denom1, int denom2){
+    public static int[] multiplyDivide(String operator, int totalNume1, int totalNume2, int denom1, int denom2){//calculates the fraction if it's multiply or divide
         int[] improp2 = new int[2];
         if(operator.equals("*")){
             improp2[0] = totalNume1 * totalNume2;
             improp2[1] = denom1 * denom2;
         }else{
-            improp2[0] = totalNume1 * denom2;
+            improp2[0] = totalNume1 * denom2;//dividing a fraction is the same as multiplying its reciprocal
             improp2[1] = totalNume2 * denom1;
         }
         return improp2;
     }
-    public static int toImproper(int wholeNum, int numerator, int denominator){
+    public static int toImproper(int wholeNum, int numerator, int denominator){//does calculation do produce an answer that is an improper fraction
         int totalNume;
-        if(wholeNum < 0){
+        if(wholeNum < 0){//if wholeNum is a negative number
             totalNume = wholeNum * denominator - numerator;
         }else{
-            totalNume = wholeNum * denominator + numerator;
+            totalNume = wholeNum * denominator + numerator;//find totalNume
         }
         return totalNume;
     }
-    public static String reduce(int[] improper){
+    public static String reduce(int[] improper){//reduce the improper fraction
         int reducedNume;
         int reducedDenom;
         int whole;
         int gCF;
-        if(improper[0] == 0){
+        if(improper[0] == 0){//if the numerator is 0
             return "0";
-        }else if(improper[0] == improper[1]){
+        }else if(improper[0] == improper[1]){//is the result will be 1
             return "1";
-        }else if(isDivisibleBy(improper[0], improper[1])){
+        }else if(isDivisibleBy(improper[0], improper[1])){//if numerator is divisible by denominator
             whole = improper[0] / improper[1];
             return "" + whole;
-        }else if((absValue(improper[0]) > improper[1]) && !(isDivisibleBy(improper[0], improper[1]))){
+        }else if((absValue(improper[0]) > improper[1]) && !(isDivisibleBy(improper[0], improper[1]))){//if numerator is greater but not divisible by denominator
             whole = improper[0] / improper[1];
-            reducedNume = absValue(improper[0]) % improper[1];
+            reducedNume = absValue(improper[0]) % improper[1];//find numerator
             gCF = gcf(reducedNume, improper[1]);
-            reducedNume /= gCF;
+            reducedNume /= gCF;//find reducedNume
             improper[1] /= gCF;
             if(whole == 0){
                 if(improper[1] < 0) {
-                    reducedNume *= -1;
+                    reducedNume *= -1;//changes the negative sign from denominator to numerator, answer is the same
                     improper[1] *= -1;
                 }
             	return reducedNume + "/" + improper[1];
