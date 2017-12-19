@@ -17,12 +17,20 @@ public class FractionTester
             System.out.println("Enter your expression: ");
             userExpr = input.nextLine();
             if(!(userExpr.equals("quit"))){
-                Fraction exp1 = new Fraction(userExpr);
-                exp1.produceAnswer();
-                System.out.println(exp1.toString());
+                System.out.println(produceAnswer(userExpr));
             }else{
                 done = true;
             }
         }
+    }
+    public static String produceAnswer(String input)//returns the final answer of calculation, simplified
+    { 
+        // TODO: Implement this function to produce the solution to the input
+        String[] splitArr = input.split(" ");//split the input at space
+        Fraction op1 = new Fraction(splitArr[0]);
+        String operator = splitArr[1];
+        Fraction op2 = new Fraction(splitArr[2]);
+        FractionCalculation expression = new FractionCalculation(op1, operator, op2);
+        return expression.calculateResult();
     }
 }
