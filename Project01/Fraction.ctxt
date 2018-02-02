@@ -11,6 +11,4 @@ comment4.params=
 comment4.target=int\ getNume()
 comment5.params=
 comment5.target=int\ getDenom()
-comment6.params=operand
-comment6.target=void\ setFraction(java.lang.String)
-numComments=7
+numComments=6
