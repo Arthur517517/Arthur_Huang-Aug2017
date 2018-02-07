@@ -65,7 +65,7 @@ public class ThereAndBackAgain
 		party.add(bilbo);
 		party.add(gandalf);
 		for(String member : dwarfNames) {
-			party.add(new Traveler(member));
+			party.add(new Dwarf(member));
 		}
 	}
 	
@@ -74,15 +74,15 @@ public class ThereAndBackAgain
 	// member of party has gone. builds a String that says how far each member of the 
 	// party has traveled.
 	//Ex.  Bilbo has traveled 100 miles
-	//     Gandalf the grey has traveled 300 miles
+	//     Gandalf the Grey has traveled 300 miles
 	//     fili has traveled 100 miles
-	//     kili has traveled 100 miles
+	//     kili has traveled 100 miles 
 	public static String allTravel(ArrayList<Traveler> party, int miles)
 	{
 		String reportTraveled = "";
 		for(int i = 0; i < party.size(); i++) {
 			party.get(i).travel(miles);
-			reportTraveled += party.get(i).getName() + party.get(i).getDistanceTraveled() + " miles\n";
+			reportTraveled += party.get(i).getName() + " has traveled " + party.get(i).getDistanceTraveled() + " miles\n";
 		}
 		return reportTraveled;
 	}
