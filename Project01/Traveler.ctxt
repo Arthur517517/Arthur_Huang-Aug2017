@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Traveler
+comment1.params=name
+comment1.target=Traveler(java.lang.String)
+comment2.params=
+comment2.target=int\ getDistanceTraveled()
+comment3.params=miles
+comment3.target=void\ travel(int)
+comment4.params=
+comment4.target=java.lang.String\ getName()
+numComments=5

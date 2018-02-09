@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Wizard
+comment1.params=name\ color
+comment1.target=Wizard(java.lang.String,\ java.lang.String)
+comment2.params=miles
+comment2.target=void\ travel(int)
+comment3.params=
+comment3.target=java.lang.String\ getName()
+numComments=4
