@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=RectangularPrism
+comment0.text=\ Write\ this\ concrete\ (non-abstract)\ class\ called\ RectangularPrism.\ \ \r\n\ It\ has\ 2\ private\ fields\ (length\ and\ width).\r\n\ It\ inherits\ its\ height\ from\ its\ superclass,\ Prism\ (because\ all\ prisms\ have\ a\ height).\r\n\ Provide\ a\ constructor\ and\ the\ methods\ required\ by\ its\ abstract\ superclass.\ \ \r\n
+comment1.params=length\ width\ height
+comment1.target=RectangularPrism(double,\ double,\ double)
+comment2.params=
+comment2.target=double\ calcAreaOfBase()
+comment3.params=
+comment3.target=double\ calcPerimeter()
+numComments=4

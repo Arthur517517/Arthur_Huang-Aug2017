@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=TriangularPrism
+comment0.text=\ Write\ this\ concrete\ (non-abstract)\ class\ called\ TriangularPrism.\ \ \r\n\ It\ has\ 3\ private\ fields\ (sideA,\ sideB,\ and\ sideC).\r\n\ It\ inherits\ its\ height\ from\ its\ superclass,\ Prism\ (because\ all\ prisms\ have\ a\ height).\r\n\ Provide\ a\ constructor\ and\ the\ methods\ required\ by\ its\ abstract\ superclass.\ \ \r\n\ \r\n\ Math\ Note\:\r\n\ Perimeter\ refers\ to\ the\ perimeter\ of\ the\ base\ -\ the\ sum\ of\ all\ the\ sides.\r\n\ To\ find\ the\ area\ of\ a\ triangle\ given\ 3\ side\ lengths,\ look\ up\ Heron's\ formula.\ \ \r\n\ It\ uses\ half\ the\ perimeter.\ \ (Why\ might\ you\ want\ to\ use\ 0.5\ instead\ of\ 1/2?)\r\n
+numComments=1

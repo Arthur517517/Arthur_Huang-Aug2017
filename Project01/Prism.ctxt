@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Prism
+comment0.text=\ Write\ this\ abstract\ class\ called\ Prism.\ \ It\ has\ one\ private\ field\ (height)\ and\ a\ constructor.\ \ \r\n\ It\ contains\ the\ methods\ calcAreaOfBase,\ calcPerimeter,\ calcVolume,\ and\ calcSA.\r\n\ None\ of\ these\ methods\ require\ parameters.\ \ \ \r\n\ A\ couple\ are\ abstract\ -\ can\ you\ tell\ which\ ones\ and\ why?\r\n\ \r\n\ Math\ note\:\r\n\ The\ volume\ of\ any\ prism\ can\ be\ found\ by\ multiplying\ the\ area\ of\ the\ base\ by\ the\ height.\r\n\ The\ surface\ area\ of\ any\ prism\ can\ be\ found\ by\ multiplying\ the\ perimeter\ of\ the\ base\ by\ the\ height\r\n\ \ \ and\ then\ adding\ on\ the\ areas\ of\ the\ 2\ bases.\r\n
+comment1.params=height
+comment1.target=Prism(double)
+comment2.params=
+comment2.target=double\ calcAreaOfBase()
+comment3.params=
+comment3.target=double\ calcVolume()
+comment4.params=
+comment4.target=double\ calcPerimeter()
+comment5.params=
+comment5.target=double\ calcSA()
+comment6.params=number
+comment6.target=double\ round2(double)
+numComments=7

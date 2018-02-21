@@ -31,4 +31,25 @@ public abstract class Prism
 		return (calcPerimeter() * height) + (2 * calcAreaOfBase());
 	}
 	
+	public double round2(double number){
+        if(number < 0){//rounds a number that is negative
+            number *= -1;//converts the number to a positive number
+            if(number * 1000 % 10 < 5){
+                number = (number * 1000 - number * 1000 % 10) / 1000;
+            }
+            else{
+                number = (10 - number * 1000 % 10 + number * 1000) / 1000;
+            }
+            number *= -1;//converts the number back to a negative number
+            return number;
+        }
+        else{//rounds a number that is positive
+            if(number * 1000 % 10 < 5){
+                return (number * 1000 - number * 1000 % 10) / 1000;
+            }
+            else{
+                return (10 - number * 1000 % 10 + number * 1000) / 1000;
+            }
+        }
+    }
 }
