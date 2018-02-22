@@ -24,8 +24,11 @@ public class TriangularPrism extends Prism
 	}
 	
 	public double calcAreaOfBase() {
-		
+		double s = (sideA + sideB + sideC) / 2;
+		return round2(Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC)));
 	}
 	
-	
+	public double calcPerimeter() {
+		return round2(sideA + sideB + sideC);
+	}
 }
