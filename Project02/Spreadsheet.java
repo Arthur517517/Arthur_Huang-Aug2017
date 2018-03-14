@@ -1,6 +1,3 @@
-
-// Update this file with your own code.
-
 public class Spreadsheet implements Grid
 {
 	private int row = 20;
@@ -38,7 +35,7 @@ public class Spreadsheet implements Grid
 	public Cell getCell(Location loc)
 	{
 		// TODO Auto-generated method stub
-		return null;
+		return grid[loc.getRow()][loc.getCol()];
 	}
 
 	@Override
