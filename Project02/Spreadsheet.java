@@ -49,6 +49,13 @@ public class Spreadsheet implements Grid
 		for(char i = 'A'; i <= 'L'; i++) {
 			sheet += (i + "         |");
 		}
+		sheet += "\n";
+		for(int i = 1; i <= 20; i++) {
+			for(int j = 1; i <= 12; i++) {
+				sheet += "          |";
+			}
+			sheet += "\n";
+		}
 		return sheet;
 	}
 
