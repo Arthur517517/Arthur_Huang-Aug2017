@@ -1,3 +1,7 @@
+ 
+
+// Update this file with your own code.
+
 public class Spreadsheet implements Grid
 {
 	private int row = 20;
@@ -41,8 +45,11 @@ public class Spreadsheet implements Grid
 	@Override
 	public String getGridText()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		String sheet = "";
+		for(char i = 'A'; i <= 'L'; i++) {
+			sheet += (i + "         |");
+		}
+		return sheet;
 	}
 
 }

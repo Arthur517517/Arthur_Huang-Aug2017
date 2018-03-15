@@ -6,7 +6,8 @@ public class TextExcel
 {
 	public static void main(String[] args)
 	{
-		Scanner input = new Scanner(System.in);
+		
+		/*Scanner input = new Scanner(System.in);
 	    String userInput = "";
 	    boolean done = false;
 	    while(!done) {
@@ -14,6 +15,10 @@ public class TextExcel
 	    	if(userInput.equals("quit")) {
 	    		done = true;
 	    	}
-	    }
+	    }*/
+	    
+	    //Spreadsheet a = new Spreadsheet();
+	    //System.out.println(a.getGridText());
+	    System.out.println("haha");
 	}
 }
