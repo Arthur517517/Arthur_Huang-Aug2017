@@ -1,7 +1,5 @@
  
 
-// Update this file with your own code.
-
 public class Spreadsheet implements Grid
 {
 	private int row = 20;
@@ -46,12 +44,13 @@ public class Spreadsheet implements Grid
 	public String getGridText()
 	{
 		String sheet = "";
+		
 		for(char i = 'A'; i <= 'L'; i++) {
 			sheet += (i + "         |");
 		}
 		sheet += "\n";
 		for(int i = 1; i <= 20; i++) {
-			for(int j = 1; i <= 12; i++) {
+			for(int j = 1; j <= 12; j++) {
 				sheet += "          |";
 			}
 			sheet += "\n";
