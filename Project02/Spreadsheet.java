@@ -23,13 +23,8 @@ public class Spreadsheet implements Grid
 		}else if(userInput.length == 1 && !userInput[0].equals("clear")) {
 			SpreadsheetLocation loc = new SpreadsheetLocation(userInput[0]);
 			return getCell(loc).fullCellText();
-		}else if(userInput.length == 3 && !(userInput[2].contains("%"))){
-			SpreadsheetLocation loc = new SpreadsheetLocation(userInput[0]);
-			grid[loc.getRow()][loc.getCol()] = new TextCell(userInput[2]);
-			return getGridText();
-		}else if(userInput.length == 3 && userInput[2].contains("%")) {
-			SpreadsheetLocation loc = new SpreadsheetLocation(userInput[0]);
-			grid[loc.getRow()][loc.getCol()] = new PercentCell(userInput[2]);
+		}else if(userInput.length == 3) {
+			assignCell(userInput[0], userInput[2]);
 			return getGridText();
 		}else {
 			return "Invalid command";
@@ -89,6 +84,19 @@ public class Spreadsheet implements Grid
 			for(int j = 0; j < grid[i].length; j++) {
 				grid[i][j] = new EmptyCell();
 			}
+		}
+	}
+	
+	public void assignCell(String loc, String input) {
+		SpreadsheetLocation location = new SpreadsheetLocation(loc);
+		if(input.contains("\"")) {
+			grid[location.getRow()][location.getCol()] = new TextCell(input);
+		}else if(input.contains("%")) {
+			grid[location.getRow()][location.getCol()] = new PercentCell(input);
+		}else if(input.contains("(")) {
+			grid[location.getRow()][location.getCol()] = new FormulaCell(input);
+		}else {
+			grid[location.getRow()][location.getCol()] = new ValueCell(input);
 		}
 	}
 }
