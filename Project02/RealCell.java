@@ -8,11 +8,20 @@ public abstract class RealCell implements Cell{
 	public abstract double getDoubleValue();
 	
 	
-	public String abbreviatedCellText() {
-		return "";
+	public abstract String abbreviatedCellText(); 
+		
+	
+	
+	public abstract String fullCellText();
+	
+	public String fillSpaces(String input) {
+		while(input.length() < 10) {
+			input += " ";
+		}
+		return input;
 	}
 	
-	public String fullCellText() {
-		return "";
+	public String getRealCell() {
+		return entry;
 	}
 }

@@ -4,19 +4,20 @@ public class PercentCell extends RealCell{
 		super(entry);
 	}
 	
+	public String abbreviatedCellText() {
+		String abbr = super.getRealCell().substring(0, super.getRealCell().indexOf('.')) + "%";
+		abbr = super.fillSpaces(abbr);
+		return abbr;
+	}
+	
 	public String fullCellText() {
-		String result = entry;
-		String a;
-		String c;
-		
-		
-		StringBuilder percent = new StringBuilder(entry);
-		percent.deleteCharAt(entry.length()-1);
-		a = percent.toString();
-		double decimalPercent = Double.parseDouble(result);
-		c = (decimalPercent * 0.01) +"";
-		
-		return c;
+		return (getDoubleValue() * 0.01) + "";
+	}
+	
+	public double getDoubleValue() {
+		String percent = super.getRealCell().substring(0, super.getRealCell().length()-1);
+		double doubPercent = Double.parseDouble(percent);
+		return doubPercent;
 	}
 		
 }

@@ -15,6 +15,7 @@ public class Spreadsheet implements Grid
 	public String processCommand(String command)
 	{
 		String[] userInput = command.split(" ", 3);
+		
 		if((userInput[0].toLowerCase().equals("clear")) && userInput.length == 2) {
 			clear(userInput[1]);
 		}else if(userInput[0].toLowerCase().equals("clear")) {
@@ -22,9 +23,13 @@ public class Spreadsheet implements Grid
 		}else if(userInput.length == 1 && !userInput[0].equals("clear")) {
 			SpreadsheetLocation loc = new SpreadsheetLocation(userInput[0]);
 			return getCell(loc).fullCellText();
-		}else if(userInput.length == 3){
+		}else if(userInput.length == 3 && !(userInput[2].contains("%"))){
 			SpreadsheetLocation loc = new SpreadsheetLocation(userInput[0]);
 			grid[loc.getRow()][loc.getCol()] = new TextCell(userInput[2]);
+			return getGridText();
+		}else if(userInput.length == 3 && userInput[2].contains("%")) {
+			SpreadsheetLocation loc = new SpreadsheetLocation(userInput[0]);
+			grid[loc.getRow()][loc.getCol()] = new PercentCell(userInput[2]);
 			return getGridText();
 		}else {
 			return "Invalid command";
