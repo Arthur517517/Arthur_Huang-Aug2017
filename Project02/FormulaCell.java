@@ -1,18 +1,22 @@
 
-public class FormulaCell extends RealCell{
+	public class FormulaCell extends RealCell{
 	public FormulaCell(String entry) {
 		super(entry);
 	}
 	
 	public String abbreviatedCellText() {
-		return "";
+		String finalString = getDoubleValue() + "";
+		return fillSpaces(finalString);
 	}
-	
+
 	public String fullCellText() {
 		return super.getRealCell();
 	}
 	
 	public double getDoubleValue() {
-		return 0;
+		String modified = getRealCell().substring(2, getRealCell().length()-2);
+		String[] arr = modified.split(" ");
+		
 	}
 }
+
