@@ -40,6 +40,9 @@
 			result = Double.parseDouble(arr[0]);
 		}else{
 			for(int i = 2; i < arr.length; i++) {
+				if(arr[i].matches(".*[a-l].*")) {
+					
+				}
 				if(arr[i].equals("+")){
 					result += Double.parseDouble(arr[i+1]);
 				}else if(arr[i].equals("-")) {
@@ -52,6 +55,11 @@
 			}
 		}
 		return result;
+	}
+	public String converted(String ele) {
+		if(ele.matches(".*[a-l].*")) {
+			return getCell(ele);
+		}
 	}
 }
 
